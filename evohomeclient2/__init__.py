@@ -21,7 +21,7 @@ class EvohomeClient(EvohomeBase):
         else:
             return location
 
-    def _get_single_heating_system(self):
+    def get_single_heating_system(self):
         # This allows a shortcut for some systems
         location = None
         gateway = None
@@ -135,31 +135,31 @@ class EvohomeClient(EvohomeBase):
         return self._convert(r.text)
 
     def set_status_normal(self):
-        return self._get_single_heating_system().set_status_normal()
+        return self.get_single_heating_system().set_status_normal()
 
     def set_status_reset(self):
-        return self._get_single_heating_system().set_status_reset()
+        return self.get_single_heating_system().set_status_reset()
 
     def set_status_custom(self, until=None):
-        return self._get_single_heating_system().set_status_custom(until)
+        return self.get_single_heating_system().set_status_custom(until)
 
     def set_status_eco(self, until=None):
-        return self._get_single_heating_system().set_status_eco(until)
+        return self.get_single_heating_system().set_status_eco(until)
 
     def set_status_away(self, until=None):
-        return self._get_single_heating_system().set_status_away(until)
+        return self.get_single_heating_system().set_status_away(until)
 
     def set_status_dayoff(self, until=None):
-        return self._get_single_heating_system().set_status_dayoff(until)
+        return self.get_single_heating_system().set_status_dayoff(until)
 
     def set_status_heatingoff(self, until=None):
-        return self._get_single_heating_system().set_status_heatingoff(until)
+        return self.get_single_heating_system().set_status_heatingoff(until)
 
     def temperatures(self):
-        return self._get_single_heating_system().temperatures()
+        return self.get_single_heating_system().temperatures()
     
     def zone_schedules_backup(self, filename):
-        return self._get_single_heating_system().zone_schedules_backup(filename)
+        return self.get_single_heating_system().zone_schedules_backup(filename)
 
     def zone_schedules_restore(self, filename):
-        return self._get_single_heating_system().zone_schedules_restore(filename)
+        return self.get_single_heating_system().zone_schedules_restore(filename)
